@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" stylesheets="@notification.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox fx:id="hBox" styleClass="el-notification">
+            <children>
+                <VBox fx:id="vBox" styleClass="el-notification__group" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox fx:id="titleHbox" />
+                        <StackPane fx:id="content" alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label fx:id="messageLabel" styleClass="el-notification__content" text="消息提示" wrapText="true" />
+                            </children>
+                        </StackPane>
+                    </children>
+                    <HBox.margin>
+                        <Insets left="13.0" right="8.0" />
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</StackPane>

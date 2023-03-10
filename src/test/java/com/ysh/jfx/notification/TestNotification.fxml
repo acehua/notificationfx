@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@TestNotification.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ysh.jfx.notification.TestNotification">
+    <children>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="基本用法">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="autoCloseBtn" mnemonicParsing="false" text="可自动关闭" />
+                                        <Button fx:id="notAutoCloseBtn" mnemonicParsing="false" text="不会自动关闭" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                                <TextArea layoutX="14.0" layoutY="195.0" text="    @FXML&#10;    private Button autoCloseBtn; // 可自动关闭&#10;    &#10;        autoCloseBtn.setOnAction(event -&gt; {&#10;            Notification.$notify(&quot;标题名称&quot;, &quot;这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案&quot;).show();&#10;        });&#10;" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                <Label layoutY="59.0" style="-fx-background-color: white;" text="在最简单的情况下，你可以通过构造方法只设置message字段，用于设置通知的正文。&#10;默认情况下，经过一段时间后 Notification 组件会自动关闭，但是通过设置duration，可以控制关闭的时间间隔，特别的是，如果设置为0，则不会自动关闭。注意：duration接收一个int，单位为毫秒，默认为4500。&#10;设计灵感来自于 elementUI,地址：https://element.eleme.cn/#/zh-CN/component/notification&#10;与ele不同的是，通知要想显示，后面必须跟一个.show()方法来终结操作，其他方法均可链式操作，即都返回this." wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                <TextArea layoutX="23.0" layoutY="434.0" text="    @FXML&#10;    private Button notAutoCloseBtn; // 不会自动关闭&#10;    &#10;        notAutoCloseBtn.setOnAction(event -&gt; {&#10;            Notification.$notify(&quot;提示&quot;, &quot;这是一条不会自动关闭的消息&quot;, 0).show();&#10;        });&#10;" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="带有倾向性">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label text="带有 icon，常用来显示「成功、警告、消息、错误」类的系统消息" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                <HBox layoutY="35.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="successBtn" mnemonicParsing="false" text="成功" />
+                                        <Button fx:id="warningBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="警告" />
+                                        <Button fx:id="infoBtn" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" text="消息" />
+                                        <Button fx:id="errorBtn" layoutX="160.0" layoutY="20.0" mnemonicParsing="false" text="错误" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                                <TextArea layoutX="22.0" layoutY="92.0" prefHeight="266.0" text="    @FXML&#10;    private Button successBtn;&#10;&#10;    successBtn.setOnAction(event -&gt; {&#10;            // 第一种写法&#10;            Notification.$notify(&quot;成功&quot;, &quot;这是一条成功的提示消息&quot;)&#10;                .setType(NotificationLevel.SUCCESS)&#10;                .show();&#10;            // 第二种写法&#10;            Notification.$notify.success(&quot;成功&quot;, &quot;这是一条成功的提示消息&quot;)&#10;                .show();&#10;        });" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                <TextArea layoutX="10.0" layoutY="365.0" prefHeight="270.0" text="    @FXML&#10;    private Button warningBtn;&#10;    &#10;        warningBtn.setOnAction(event -&gt; {&#10;            // 第一种写法&#10;            Notification.$notify(&quot;警告&quot;, &quot;这是一条警告的提示消息&quot;)&#10;                .setType(NotificationLevel.WARNING)&#10;                .show();&#10;            // 第二种写法&#10;            Notification.$notify.warning(&quot;警告&quot;, &quot;这是一条警告的提示消息&quot;)&#10;                .show();&#10;        });" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                <Label layoutX="20.0" layoutY="654.0" text="其他写法以此类推，这里不再写出代码，可以查看源码。" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="自定义弹出位置">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label text="使用position属性定义 Notification 的弹出位置，支持四个选项：TOP_RIGHT, TOP_LEFT, BOTTOM_RIGHT, BOTTOM_LEFT，默认为TOP_RIGHT。" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                <HBox layoutY="35.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="topRightBtn" mnemonicParsing="false" text="右上角" />
+                                        <Button fx:id="bottomRightBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="右下角" />
+                                        <Button fx:id="bottomLeftBtn" layoutX="90.0" layoutY="20.0" mnemonicParsing="false" text="左下角" />
+                                        <Button fx:id="topLeftBtn" layoutX="160.0" layoutY="20.0" mnemonicParsing="false" text="左上角" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                                <TextArea layoutX="22.0" layoutY="92.0" prefHeight="601.0" prefWidth="984.0" text="   // 自定义弹出位置&#10;    @FXML&#10;    private Button topRightBtn;&#10;    &#10;    @FXML&#10;    private Button bottomRightBtn;&#10;    &#10;    @FXML&#10;    private Button bottomLeftBtn;&#10;    &#10;    @FXML&#10;    private Button topLeftBtn;&#10;&#10;    topRightBtn.setOnAction(event -&gt; {&#10;            Notification.$notify(&quot;自定义位置&quot;, &quot;右上角弹出的消息&quot;).show();&#10;        });&#10;        bottomRightBtn.setOnAction(event -&gt; {&#10;            Notification.$notify(&quot;自定义位置&quot;, &quot;右下角弹出的消息&quot;).setPos(NotificationPosition.BOTTOM_RIGHT).show();&#10;        });&#10;        bottomLeftBtn.setOnAction(event -&gt; {&#10;            Notification.$notify(&quot;自定义位置&quot;, &quot;左下角弹出的消息&quot;).setPos(NotificationPosition.BOTTOM_LEFT).show();&#10;        });&#10;        topLeftBtn.setOnAction(event -&gt; {&#10;            Notification.$notify(&quot;自定义位置&quot;, &quot;左上角弹出的消息&quot;).setPos(NotificationPosition.TOP_LEFT).show();&#10;        });" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="自定义显示任意内容">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label text="setContent 方法支持传入任意Node类型节点" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                <HBox layoutY="35.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="useNodeBtn" mnemonicParsing="false" text="传入任意Node节点" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                                <TextArea layoutX="22.0" layoutY="92.0" prefHeight="601.0" prefWidth="984.0" text="    @FXML&#10;    private Button useNodeBtn;&#10;    &#10;&#10;    useNodeBtn.setOnAction(event -&gt; {&#10;            VBox content = new VBox();&#10;            Slider slider = new Slider(0, 100, 50);&#10;            Label label = new Label(&quot;set value&quot;);&#10;            label.textProperty().bind(slider.valueProperty().asString());&#10;            content.getChildren().addAll(slider, label);&#10;            content.setSpacing(10);&#10;            content.setAlignment(Pos.CENTER);&#10;            Notification.$notify.success(&quot;success&quot;)&#10;                .setContent(content)&#10;                .show();&#10;        });&#10;        " AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="隐藏关闭按钮">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label text="可以不显示关闭按钮" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                <HBox layoutY="35.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="hideCloseBtn" mnemonicParsing="false" text="隐藏关闭按钮" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                                <TextArea layoutX="22.0" layoutY="92.0" prefHeight="299.0" prefWidth="984.0" text="    // 隐藏关闭按钮&#10;    @FXML&#10;    private Button hideCloseBtn;&#10;    &#10;&#10;    hideCloseBtn.setOnAction(event -&gt; {&#10;            Notification.$notify.info(&quot;Info&quot;, &quot;这是一条没有关闭按钮的消息&quot;)&#10;                .setShowClose(false)&#10;                .show();&#10;        });&#10;&#10;" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="回调函数">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label text="可以设置通知关闭和点击时的回调函数" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                                <HBox layoutY="35.0" spacing="20.0">
+                                    <children>
+                                        <Button fx:id="clickCallbackBtn" mnemonicParsing="false" text="点击 Notification 时的回调函数" />
+                                        <Button fx:id="closeCallbackBtn" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="通知关闭时的回调函数" />
+                                        <Button fx:id="onShownCallbackBtn" layoutX="274.0" layoutY="20.0" mnemonicParsing="false" text="通知显示完毕的回调函数" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </HBox>
+                                <TextArea layoutX="22.0" layoutY="92.0" prefHeight="587.0" prefWidth="984.0" text="    // 回调函数&#10;    @FXML&#10;    private Button clickCallbackBtn; // 点击 通知 时的回调函数&#10;    &#10;    @FXML&#10;    private Button closeCallbackBtn; // 关闭时的回调函数&#10;    &#10;    @FXML&#10;    private Button onShownCallbackBtn; // 通知显示完毕的回调函数&#10;    &#10;        clickCallbackBtn.setOnAction(event -&gt; {&#10;            Notification.$notify.success(&quot;提示&quot;, &quot;演示设置点击通知回调函数&quot;, 0).setOnClick(event1 -&gt; {&#10;                Notification.$notify.info(&quot;你点击了通知&quot;).show();&#10;            }).setShowClose(false).show();&#10;        });&#10;        &#10;        closeCallbackBtn.setOnAction(event -&gt; {&#10;            Notification.$notify.success(&quot;提示&quot;, &quot;演示通知关闭的回调函数&quot;, 0).setOnClose(event1 -&gt; {&#10;                Notification.$notify.info(&quot;通知已关闭&quot;).show();&#10;            }).show();&#10;        });&#10;        &#10;        onShownCallbackBtn.setOnAction(event -&gt; {&#10;            Notification.$notify.success(&quot;提示&quot;, &quot;演示通知显示完毕回调函数&quot;, 0).setOnShown(event1 -&gt; {&#10;                Notification.$notify.info(&quot;通知已显示完毕&quot;).show();&#10;            }).show();&#10;        });" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</StackPane>

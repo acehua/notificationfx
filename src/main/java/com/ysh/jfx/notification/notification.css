@@ -1,0 +1,61 @@
+/*
+.el-notification {
+  x 偏移量 | y 偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色
+  offset-x | offset-y | blur-radius | spread-radius | color
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+*/
+.el-notification {
+    -fx-pref-width: 330px;
+    -fx-padding: 14px 26px 14px 13px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-color: #EBEEF5;
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 12.0, 0, 0, 2);
+}
+
+.el-notification__title {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: #303133;
+}
+
+.el-notification__content {
+    -fx-font-size: 14px;
+    -fx-text-fill: #606266;
+}
+
+.el-notification .icon Region {
+    -fx-pref-width: 24;
+    -fx-pref-height: 24;
+}
+
+.el-notification .icon.close {
+    -fx-scale-x: 0.5;
+    -fx-scale-y: 0.5;
+    -fx-background-color: #4d4a4a;
+    -fx-shape: "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z";
+}
+
+.el-notification .icon.success {
+    -fx-background-color: #67C23A;
+    -fx-shape: "M12,2C6.477,2,2,6.477,2,12c0,5.523,4.477,10,10,10s10-4.477,10-10C22,6.477,17.523,2,12,2z M17.707,9.707l-7,7 C10.512,16.902,10.256,17,10,17s-0.512-0.098-0.707-0.293l-3-3c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L10,14.586 l6.293-6.293c0.391-0.391,1.023-0.391,1.414,0S18.098,9.316,17.707,9.707z";
+}
+
+.el-notification .icon.info {
+    -fx-background-color: #909399;
+    -fx-shape: "M12,2C6.477,2,2,6.477,2,12s4.477,10,10,10s10-4.477,10-10S17.523,2,12,2z M12,17L12,17c-0.552,0-1-0.448-1-1v-4 c0-0.552,0.448-1,1-1h0c0.552,0,1,0.448,1,1v4C13,16.552,12.552,17,12,17z M12.5,9h-1C11.224,9,11,8.776,11,8.5v-1 C11,7.224,11.224,7,11.5,7h1C12.776,7,13,7.224,13,7.5v1C13,8.776,12.776,9,12.5,9z";
+}
+
+.el-notification .icon.warning {
+    -fx-background-color: #E6A23C;
+    -fx-scale-x: 0.8;
+    -fx-shape: "M12 1L3 5L3 11C3 18.83 9.439 22.486 12 23C14.561 22.486 21 18.83 21 11L21 5L12 1 z M 12 3.1894531L19 6.3007812L19 11C19 17.134 14.215 20.2545 12 20.9375C9.785 20.2545 5 17.134 5 11L5 6.3007812L12 3.1894531 z M 11 6L11 14L13 14L13 6L11 6 z M 11 16L11 18L13 18L13 16L11 16 z";
+}
+
+.el-notification .icon.error {
+    -fx-background-color: #F56C6C;
+    -fx-shape: "M12 2C6.4889971 2 2 6.4889971 2 12C2 17.511003 6.4889971 22 12 22C17.511003 22 22 17.511003 22 12C22 6.4889971 17.511003 2 12 2 z M 12 4C16.430123 4 20 7.5698774 20 12C20 16.430123 16.430123 20 12 20C7.5698774 20 4 16.430123 4 12C4 7.5698774 7.5698774 4 12 4 z M 8.7070312 7.2929688L7.2929688 8.7070312L10.585938 12L7.2929688 15.292969L8.7070312 16.707031L12 13.414062L15.292969 16.707031L16.707031 15.292969L13.414062 12L16.707031 8.7070312L15.292969 7.2929688L12 10.585938L8.7070312 7.2929688 z";
+}

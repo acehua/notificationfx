@@ -1,0 +1,43 @@
+.root {
+    -fx-background-color: null;
+}
+
+.button {
+    -fx-cursor: hand;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #DCDFE6;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 4px;
+    -fx-text-fill: #606266;
+    -fx-font-weight: 500;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 15px;
+}
+
+.text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 9px 12px;
+    -fx-background-color: #fafafa;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-color: #eaeefb;
+    -fx-border-radius: 4px;
+}
+
+
+.tab-pane .tab-header-background {
+    -fx-background-color: #f5f7fa;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #fff;
+    -fx-border-color: #dcdfe6;
+    -fx-padding: 5px;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: #565657;
+    -fx-background-color: null;
+    -fx-padding: 0 10px;
+}
