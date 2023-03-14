@@ -11,9 +11,14 @@
 
 ## 使用说明
 
-目前还未上maven仓库
-
-直接运行 com.ysh.jfx.notification.TestNotification
+maven:
+```
+    <dependency>
+        <groupId>io.github.acehua</groupId>
+        <artifactId>notificationfx</artifactId>
+        <version>0.0.1</version>
+    </dependency>
+```
 
 使用方法和element ui 的通知组件大部分一样
 如下：
@@ -22,11 +27,13 @@
     // 第一种写法
     Notification.$notify("成功","这是一条成功的提示消息").setType(NotificationLevel.SUCCESS).show();
     
-        // 第二种写法
-        Notification.$notify.success("成功","这是一条成功的提示消息").show();
-
+    // 第二种写法
+    Notification.$notify.success("成功","这是一条成功的提示消息").show();
 
 ```
+> 具体使用代码可以下载源码，运行 com.ysh.jfx.notification.TestNotification
+> 效果如下图所示：
+
 
 ![Image text](https://gitee.com/vip_huage/notificationfx/raw/master/snapshots/1.jpg)
 
