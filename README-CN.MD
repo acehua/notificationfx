@@ -1,4 +1,4 @@
-[English](./README-CN.md) | 中文
+[English](./README.MD) | 中文
 
 参考element ui 写的javafx 通知组件
 
